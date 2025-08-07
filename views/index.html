@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <hr>
+    <form>
+    <fieldset>
+    <h2 id="Kontol">Cek Khodam Kamu!!<h2>
+    <input type="text" id="namak" placeholder="Tulis Nama Kamu" required>
+    <br>
+    <button type="submit" class="btn-check">Check</button>
+    <script>
+      document.querySelector(".btn-check").addEventListener("click", () => {
+        var valu = document.getElementById("namak").value
+        if (valu.length == 0) {
+          window.navigator.vibrate([500])
+          return;
+        }
+        let khodam = ["Buaya Birahi","Bunglon Metal","Siput Gila","Cicak Nangkring","Lele Kecebur","Babi Ngepet","Ucok Lanang","Banci Punk Rock"]
+	    const j = Math.floor(Math.random() * khodam.length)
+        Kontol.innerText = khodam[j]
+      })
+    </script>
+    </fieldset>
+    </form>
+  </body>
+</html>

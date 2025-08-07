@@ -1,0 +1,25 @@
+{
+  "limit": {
+    "berhasil": function(ctx, jid, options) {
+      let text = `<b>PROSES RESET LIMIT BERHASIL!!!</b>
+
+Zackmans dengan senang hati menginformasikan bahwa limit dari <b>${options.jumlah} pengguna</b> telah berhasil direset. 🚀
+
+🔍 <b>DETAIL RESET:</b>
+- <b>Jumlah Pengguna:</b> ${options.jumlah}
+- <b>Status:</b> Berhasil
+- <b>Waktu Proses:</b> ${options.waktu}
+
+Kami berkomitmen untuk memberikan pengalaman terbaik bagi semua pengguna kami. Jika ada pertanyaan lebih lanjut atau bantuan yang dibutuhkan, jangan ragu untuk menghubungi tim dukungan kami! 💬
+
+Terima kasih telah menggunakan layanan zackmans! 🙌✨`
+      ctx.telegram.sendMessage(jid, text, { parse_mode: "HTML", reply_to_message_id: options.id })
+    },
+    "tidakjadi": function(ctx, jid, options) {
+      let text = `<b>PROSES RESET LIMIT</b>
+
+Dengan ini kami informasikan bahwa proses reset limit tidak jadi dilakukan. Hal ini disebabkan karena tidak ada pengguna yang saat ini memiliki limit 0. Mohon untuk memperhatikan informasi ini dan jika ada pertanyaan lebih lanjut, silakan menghubungi tim kami. Terima kasih atas perhatian Anda! 😊`
+      ctx.telegram.sendMessage(jid, text, { parse_mode: "HTML", reply_to_message_id: options.id })
+    }
+  }
+}
