@@ -5,10 +5,8 @@
 */
 async function igDL(url, ctx) {
 console.log("instagram downloader...")
-let igdlJson = await betabotz.instagram(url)
-for (let i of igdlJson.result) {
-await ctx.sendFileUrl(i._url)
-}
+  igdljson = await scraper.instagram.download(url)
+  await ctx.sendFileUrl(igdljson.url)
 }
 
 async function fbDL(url, ctx) {
